@@ -1,0 +1,109 @@
+{
+  "apiVersion": "0.2",
+  "swaggerVersion": "1.1",
+  "basePath": "https://petitions.whitehouse.gov/api/v1/",
+  "resourcePath": "/users.{format}",
+  "apis": [
+    {
+      "path": "/users.{format}",
+      "description": "Query for users",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "nickname": "getUsersIndex",
+          "responseClass": "User",
+          "summary": "Query for users",
+          "parameters": [
+            {
+              "paramType:": "query",
+              "name": "callback",
+              "description": "JSONP Callback",
+              "dataType": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_before",
+              "description": "Filters results to display items created before specified time. Accepts Unix timestamp.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_after",
+              "description": "Filters results to display items created after specified time. Accepts Unix timestamp.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_at",
+              "description": "Filters results based on exact creation time. Accepts Unix timestamp.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "limit",
+              "description": "The maximum number of results that may be returned. E.g., to return results 10-20, an offset of 10 and limit of 10 would be passed.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "offset",
+              "description": "Offset the returned results by this number. E.g., to return results 10-20, an offset of 10 and limit of 10 would be passed.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "mock",
+              "description": "When set to 1, this will cause the service to return a mock response.",
+              "dataType": "boolean",
+              "required": false,
+              "allowMultiple": false
+            }
+          ],
+          "summary": "Query for a list of users."
+        }
+      ]
+    }
+  ],
+  "models": {
+    "User": {
+      "id": "User",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "location": {
+          "type": "Location"
+        },
+        "created": {
+          "type": "int"
+        }
+      }
+    },
+    "Location": {
+      "id": "Location",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

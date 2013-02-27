@@ -1,0 +1,15 @@
+{
+  "apiVersion": "1",
+  "swaggerVersion": "1.0",
+  "basePath": "https://petitions.whitehouse.gov/api/v1/",
+  "apis": [
+    {
+      "path": "/petition.{format}",
+      "description": "Operations about petitions"
+    },
+    {
+      "path": "/user.{format}",
+      "description": "Operations about users"
+    }
+  ]
+}
