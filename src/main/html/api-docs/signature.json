@@ -1,0 +1,145 @@
+{
+  "apiVersion": "0.2",
+  "swaggerVersion": "1.1",
+  "basePath": "https://petitions.whitehouse.gov/api/v1/",
+  "resourcePath": "/signature.json",
+  "apis": [
+    {
+      "path": "/petitions/{petitionID}/signatures.{format}",
+      "description": "Operations about signatures",
+      "operations": [
+        {
+          "httpMethod": "GET",
+          "nickname": "getSignatures",
+          "responseClass": "Signature",
+          "summary": "Query for petition signatures",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "petitionID",
+              "description": "The petition to retrieve",
+              "dataType": "int",
+              "required": true
+            },
+            {
+              "paramType:": "query",
+              "name": "callback",
+              "description": "Filters results to display signatures from a specific city.",
+              "dataType": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "state",
+              "description": "Filters results to display signatures from a specific state.",
+              "dataType": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "zipcode",
+              "description": "Filters results to display signatures from a specific zipcode.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "country",
+              "description": "Filters results to display signatures from a specific country.",
+              "dataType": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "city",
+              "description": "JSONP Callback",
+              "dataType": "string",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_before",
+              "description": "Filters results to display items created before specified time. Accepts Unix timestamp.",
+              "dataType": "Date",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_after",
+              "description": "Filters results to display items created after specified time. Accepts Unix timestamp.",
+              "dataType": "Date",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "created_at",
+              "description": "Filters results based on exact creation time. Accepts Unix timestamp.",
+              "dataType": "Date",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "limit",
+              "description": "The maximum number of results that may be returned. E.g., to return results 10-20, an offset of 10 and limit of 10 would be passed.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "offset",
+              "description": "Offset the returned results by this number. E.g., to return results 10-20, an offset of 10 and limit of 10 would be passed.",
+              "dataType": "int",
+              "required": false,
+              "allowMultiple": false
+            },
+            {
+              "paramType:": "query",
+              "name": "mock",
+              "description": "When set to 1, this will cause the service to return a mock response.",
+              "dataType": "boolean",
+              "required": false,
+              "allowMultiple": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": {
+    "Signature": {
+      "id": "Signature",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "zip": {
+          "type": "int"
+        },
+        "created": {
+          "type": "int"
+        }
+      }
+    }
+  }
+}

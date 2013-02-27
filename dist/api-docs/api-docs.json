@@ -1,0 +1,18 @@
+{
+  "apiVersion": "1",
+  "swaggerVersion": "1.0",
+  "apis": [
+    {
+      "path": "/petition.{format}",
+      "description": "Operations about petitions"
+    },
+    {
+      "path": "/user.{format}",
+      "description": "Operations about users"
+    },
+    {
+      "path": "/signature.{format}",
+      "description": "Operations about signatures"
+    }
+  ]
+}
